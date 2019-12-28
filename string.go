@@ -7,90 +7,37 @@ import (
 
 // String struct
 type String struct {
-	Lower                   bool
-	LowerUpper              bool
-	LowerUpperNumber        bool
-	LowerUpperSpecial       bool
-	LowerUpperNumberSpecial bool
-	LowerNumber             bool
-	LowerNumberSpecial      bool
-	LowerSpecial            bool
-	Upper                   bool
-	UpperNumber             bool
-	UpperNumberSpecial      bool
-	UpperSpecial            bool
-	Number                  bool
-	NumberSpecial           bool
-	Special                 bool
+	Lower   bool
+	Upper   bool
+	Number  bool
+	Special bool
 }
 
+/*
+* Gen
+* generate random string base on character set
+*/
 func (r String) Gen(length int) string {
 
 	lower := "abcdefghijklmnopqrstuvwxyz"
 	upper := "ABCDEFGHIJKLMNPQRSTUVWXYZ"
 	number := "0123456789"
 	special := "~!@#$%^&*()-_=+[]{}?/,.<>;:" //"@#$%&?_-+="
-	characters := ""
+	charset := ""
 
 	if r.Lower {
-		return randomProcessor(length, lower)
-
-	} else if r.LowerUpper {
-		characters = lower + upper
-		return randomProcessor(length, characters)
-
-	} else if r.LowerUpperNumber {
-		characters = lower + upper + number
-		return randomProcessor(length, characters)
-
-	} else if r.LowerUpperSpecial {
-		characters = lower + upper + special
-		return randomProcessor(length, characters)
-
-	} else if r.LowerUpperNumberSpecial {
-		characters = lower + upper + number + special
-		return randomProcessor(length, characters)
-
-	} else if r.LowerNumber {
-		characters = lower + number
-		return randomProcessor(length, characters)
-
-	} else if r.LowerNumberSpecial {
-		characters = lower + number + special
-		return randomProcessor(length, characters)
-
-	} else if r.LowerSpecial {
-		characters = lower + special
-		return randomProcessor(length, characters)
-
+		charset += lower
 	} else if r.Upper {
-		return randomProcessor(length, upper)
-
-	} else if r.UpperNumber {
-		characters = upper + number
-		return randomProcessor(length, characters)
-
-	} else if r.UpperNumberSpecial {
-		characters = upper + number + special
-		return randomProcessor(length, characters)
-
-	} else if r.UpperSpecial {
-		characters = upper + special
-		return randomProcessor(length, characters)
-
+		charset += upper
 	} else if r.Number {
-		return randomProcessor(length, number)
-
-	} else if r.NumberSpecial {
-		characters = number + special
-		return randomProcessor(length, characters)
-
+		charset += number
 	} else if r.Special {
-		return randomProcessor(length, special)
-
+		charset += special
+	} else {
+		charset += lower
 	}
 
-	return ""
+	return randomProcessor(length, charset)
 }
 
 func randomProcessor(length int, charset string) string {

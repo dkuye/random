@@ -16,24 +16,13 @@ import (
 )
 
 func main(){
-    str := random.String{Lower: true}.Gen(8)
+    str := random.String{Lower: true, Upper: true}.Gen(8)
     fmt.Print(str)
 }
 ```
 
 ## Available Option
--   Lower           
--   LowerUpper
--   LowerUpperNumber        
--   LowerUpperSpecial       
--   LowerUpperNumberSpecial 
--   LowerNumber             
--  	LowerNumberSpecial      
-- 	LowerSpecial            
--  	Upper                   
--  	UpperNumber             
--  	UpperNumberSpecial      
--  	UpperSpecial            
--  	Number                  
--  	NumberSpecial           
--  	Special                
+-   Lower
+-  	Upper
+-  	Number
+-  	Special
