@@ -16,7 +16,7 @@ type String struct {
 /*
 * Gen
 * generate random string base on character set
-*/
+ */
 func (r String) Gen(length int) string {
 
 	lower := "abcdefghijklmnopqrstuvwxyz"
@@ -27,13 +27,17 @@ func (r String) Gen(length int) string {
 
 	if r.Lower {
 		charset += lower
-	} else if r.Upper {
+	}
+	if r.Upper {
 		charset += upper
-	} else if r.Number {
+	}
+	if r.Number {
 		charset += number
-	} else if r.Special {
+	}
+	if r.Special {
 		charset += special
-	} else {
+	}
+	if r.Lower == false && r.Upper == false && r.Number == false && r.Special == false {
 		charset += lower
 	}
 
