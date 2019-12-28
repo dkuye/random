@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// String struct
 type String struct {
 	Lower                   bool
 	LowerUpper              bool
@@ -39,7 +40,7 @@ func (r String) Gen(length int) string {
 		return randomProcessor(length, characters)
 
 	} else if r.LowerUpperNumber {
-		characters = lower + upper+ number
+		characters = lower + upper + number
 		return randomProcessor(length, characters)
 
 	} else if r.LowerUpperSpecial {
