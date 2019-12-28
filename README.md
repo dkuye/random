@@ -2,7 +2,7 @@
 This package generate random string.
 
 ## Installation
-```sh
+```bash
 $ go get github.com/dkuye/random
 ```
 
@@ -22,7 +22,7 @@ func main(){
 ```
 
 ## Available Option
--   Lower
--  	Upper
--  	Number
--  	Special
+-   Lower   `bool`
+-  	Upper   `bool`
+-  	Number  `bool`
+-  	Special `bool`
